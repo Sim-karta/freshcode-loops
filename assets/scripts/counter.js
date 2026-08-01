@@ -1,15 +1,21 @@
-let sum = 0;
-let userValue = 0;
+const counterBtnElement = document.querySelector(".counter-btn");
 
-while (true) {
-    userValue = prompt("Введіть число - ");
+const count = () => {
+    let sum = 0;
+    let userValue = 0;
 
-    if (userValue === null || userValue === "стоп") {
-        break;
-    } else {
-        userValue = Number(userValue);
-        sum += userValue;
+    while (true) {
+        userValue = prompt("Введіть число - ");
+
+        if (userValue === null || userValue === "стоп") {
+            break;
+        } else {
+            userValue = Number(userValue);
+            sum += userValue;
+        }
     }
-}
 
-console.log(sum);
+    console.log(sum);
+};
+
+counterBtnElement.addEventListener("click", count);
